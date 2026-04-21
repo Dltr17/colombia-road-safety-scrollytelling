@@ -1,0 +1,27 @@
+{
+  "introduccion": {
+    "titulo": "¿A Quién Escuchas Realmente en la Vía?",
+    "subtitulo": "9,232 actores viales revelan una brecha profunda entre la autoridad y el afecto.",
+    "dato_global": "69% se siente poco o nada seguro."
+  },
+  "secciones": [
+    {
+      "id": "mapa-miedo",
+      "tag": "Geografía del riesgo",
+      "texto": "En departamentos como Chocó (98.08%) y La Guajira (95.64%), la inseguridad no es una percepción, es una constante absoluta.",
+      "foco_mapa": "CHOCO"
+    },
+    {
+      "id": "vulnerabilidad",
+      "tag": "Los más expuestos",
+      "texto": "Peatones y ciclistas reportan los niveles más altos de vulnerabilidad, superando el 70% de sensación de riesgo.",
+      "foco_mapa": "NACIONAL"
+    },
+    {
+      "id": "influencia",
+      "tag": "El poder del afecto",
+      "texto": "Sorprendentemente, la pareja (94.9%) y los hijos (94.8%) influyen más en el comportamiento vial que la propia Policía (58.2%).",
+      "foco_mapa": "INFLUENCIA"
+    }
+  ]
+}
