@@ -1,7 +1,7 @@
 {
   "Region_Pacifica": {
     "titulo": "Pacífico",
-    "color": "#DB1A1A",
+    "color": "#991B1B",
     "ids": ["27", "52", "19", "76"],
     "detalles": [
       { "nombre": "Chocó", "valor": 0.9808, "color": "#dd2727" },
@@ -15,36 +15,36 @@
     "color": "#DB1A1A",
     "ids": ["44", "20", "47", "13"],
     "detalles": [
-      { "nombre": "La Guajira", "valor": 0.9564, "color": "#dd2727" },
-      { "nombre": "Cesar", "valor": 0.8089, "color": "#dd2727" },
-      { "nombre": "Magdalena", "valor": 0.7821, "color": "#dd2727" },
+      { "nombre": "La Guajira", "valor": 0.9564, "color": "#D97706" },
+      { "nombre": "Cesar", "valor": 0.8089, "color": "#EA580C" },
+      { "nombre": "Magdalena", "valor": 0.7821, "color": "#F59E0B" },
       { "nombre": "Bolívar", "valor": 0.7066, "color": "#e19393" }
     ]
   },
   "Region_Andina": {
     "titulo": "Andina",
-    "color": "#2C687B",
+    "color": "#9A3412",
     "ids": ["25", "15", "68", "73", "41", "63", "05", "17"],
     "detalles": [
-      { "nombre": "Cundinamarca", "valor": 0.7116, "color": "#e19393" },
-      { "nombre": "Boyacá", "valor": 0.677, "color": "#e19393" },
-      { "nombre": "Santander", "valor": 0.6056, "color": "#e19393" },
-      { "nombre": "Tolima", "valor": 0.5879, "color": "#e19393" },
-      { "nombre": "Huila", "valor": 0.5821, "color": "#e19393" },
-      { "nombre": "Quindío", "valor": 0.5362, "color": "#b1d0ce" },
-      { "nombre": "Antioquia", "valor": 0.4156, "color": "#b1d0ce" },
-      { "nombre": "Caldas", "valor": 0.1608, "color": "#8cc7c4" }
+      { "nombre": "Cundinamarca", "valor": 0.7116, "color": "#c2410c" },
+      { "nombre": "Boyacá", "valor": 0.677, "color": "#d97706" },
+      { "nombre": "Santander", "valor": 0.6056, "color": "#fb923c" },
+      { "nombre": "Tolima", "valor": 0.5879, "color": "#fdba74" },
+      { "nombre": "Huila", "valor": 0.5821, "color": "#fed7aa" },
+      { "nombre": "Quindío", "valor": 0.5362, "color": "#94a3b8" },
+      { "nombre": "Antioquia", "valor": 0.4156, "color": "#5eead4" },
+      { "nombre": "Caldas", "valor": 0.1608, "color": "#14b8a6" }
     ]
   },
   "Region_Amazonia": {
     "titulo": "Amazonia y Llanos",
-    "color": "#2C687B",
+    "color": "#065F46",
     "ids": ["18", "86"],
     "detalles": [
-      { "nombre": "Caqueta", "valor": 0.8605, "color": "#db1a1a" },
-      { "nombre": "Meta", "valor": 0.7157, "color": "#e19393" },
-      { "nombre": "Putumayo", "valor": 0.6321, "color": "#da7979" },
-      { "nombre": "Casanare", "valor": 0.6473, "color": "#e19393" }
+      { "nombre": "Caqueta", "valor": 0.8605, "color": "#065F46" },
+      { "nombre": "Meta", "valor": 0.7157, "color": "#166534" },
+      { "nombre": "Casanare", "valor": 0.6473, "color": "#34d399" },
+      { "nombre": "Putumayo", "valor": 0.6321, "color": "#6ee7b7" }
     ]
   },
   "Sin_Datos": {

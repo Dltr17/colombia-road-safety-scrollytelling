@@ -10,27 +10,23 @@ const MapaColombia = ({ grupoActivo }) => {
   const gruposNarrativos = {
     "Region_Pacifica": {
       ids: ["27", "52", "19", "76"], // Chocó, Nariño, Cauca, Valle del Cauca 
-      color: "#DB1A1A" // Rojo Alerta 
+      color: "#991B1B" // Rojo Alerta 
     },
     "Region_Caribe": {
       ids: ["44", "20", "47", "13"], // Guajira, Cesar, Magdalena, Bolívar 
-      color: "#DB1A1A"
+      color: "#D97706"
     },
     "Region_Amazonia": {
       ids: ["18", "86", "50", "85"], // Caquetá, Putumayo 
-      color: "#DB1A1A"
+      color: "#065F46"
     },
     "Region_Andina": {
       ids: ["25", "15", "68", "73", "41", "63", "05", "17"], // Cundinamarca a Caldas 
-      color: "#2C687B" // Azul Institucional 
+      color: "#9A3412" // Azul Institucional 
     },
-    "Region_Orinoquia": {
-      ids: ["50", "85"], // Meta, Casanare 
-      color: "#2C687B"
-    },
-    "Sin_Datos": {
+        "Sin_Datos": {
       ids: ["91", "81", "08", "23", "94", "95", "54", "66", "70", "97", "99", "88"], 
-      color: "#DB1A1A" 
+      color: "#94A3B8" 
     }
   };
 
