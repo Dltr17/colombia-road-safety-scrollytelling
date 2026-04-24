@@ -69,10 +69,9 @@ const Acto3_Influencia = () => {
           <DotLottieReact src="/animations/Traffic_Police.lottie" loop autoplay />
         </div>
 
-        {/* CAPA 3: Tarjetas Narrativas */}
+
         <div className="absolute inset-0 z-30 flex flex-col items-center justify-center p-6 pointer-events-none">
 
-          {/* Tarjeta 1: Aparece con el policía en color */}
           {scrollProgress > 0.35 && scrollProgress < 0.65 && (
             <Card className="p-6 max-w-md border-vial_blue/20 shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 bg-white/90 backdrop-blur-md pointer-events-auto opacity-85">
               <div className="flex items-center gap-3 mb-2 text-vial_blue text-xl font-geist-bold uppercase italic">
@@ -84,20 +83,26 @@ const Acto3_Influencia = () => {
               </p>
             </Card>
           )}
-
-          {/* Tarjeta 2: Ciudad Gris, Policía Color */}
-          {scrollProgress > 0.65 && scrollProgress < 0.95 && (
+          {scrollProgress > 0.65 && scrollProgress < 0.85 && (
             <Card className="p-6 max-w-md border-none bg-vial-red text-white shadow-2xl animate-in zoom-in duration-500 pointer-events-auto opacity-100! fill-none!">
               <div className="flex items-center gap-3 mb-2 text-xl font-geist-bold uppercase italic">
                 <EyeOff className="w-6 h-6 text-white" />
                 <strong> El Desafío </strong>
               </div>
-              {/* Subí la opacidad del texto a 90 para que sea legible sobre el rojo */}
               <p className="opacity-90 leading-relaxed text-lg font-geist-medium text-center">
                 Un grupo crítico de conductores <strong>del 14.6% </strong> decide ignorar las normas bajo la mirada directa de la ley. No es falta de conocimiento, es desconexión emocional.
               </p>
             </Card>
           )}
+
+          {scrollProgress > 0.85 && scrollProgress < 1 && (
+            <div className="flex items-center gap-3 mb-2">
+              <h3 className="text-4xl md:text-5xl font-geist-black text-vial-blue tracking-tighter leading-none text-center">
+                "Necesitamos algo más fuerte que el miedo a la sanción. <br className="my-4" /> El dispositivo de seguridad más efectivo no es un airbag; es el <span className="text-vial-red italic"> afecto. </span>"
+              </h3>
+            </div>
+          )}
+
         </div>
       </div>
     </section>

@@ -1,102 +1,189 @@
-import React from 'react';
-import { Heart } from "lucide-react";
+import React, { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
+import { Heart, Baby, ShieldCheck, Users, Share2, Home, CheckCircle2 } from "lucide-react";
+import { ConfettiButton } from "../ui/confetti";
+
+
 
 const Acto4_Control = () => {
-    const agentesSecretos = [
-        {
-            label: "HIJOS",
-            value: 94.8,
-            cat: "LA RAZÓN DE TODO",
-            desc: "9 de cada 10 conductores bajan la velocidad pensando en ellos."
-        },
-        {
-            label: "PAREJA",
-            value: 94.9,
-            cat: "EL ANCLA EMOCIONAL",
-            desc: "El vínculo más fuerte para decidir volver a casa a salvo."
-        }
-    ];
+  const [promised, setPromised] = useState(true);
 
-    return (
-        <section className="min-h-screen bg-[#FFF6F6] flex flex-col items-center justify-center py-20 px-6">
-            <div className="w-full max-w-2xl space-y-12">
-                
-                {/* Header del Acto */}
-                <div className="text-center space-y-4 animate-in fade-in slide-in-from-top-8 duration-1000">
-                    <div className="inline-block bg-white/60 backdrop-blur-sm px-6 py-2 rounded-2xl border border-vial_red/10 mb-4">
-                        <h2 className="text-vial_blue font-geist-bold uppercase tracking-[0.2em] text-sm">
-                            ¿Quién tiene el control real?
-                        </h2>
+
+  const actores = [
+    {
+      id: "pareja",
+      label: "Pareja",
+      value: 94.9,
+      icon: Heart,
+      color: "text-vial-blue",
+      bg: "bg-vial-teal",
+      desc: "El ancla emocional. Su voz prioriza tu regreso seguro por encima de cualquier prisa.",
+      desc1: "COMPROMISO DE CUIDADO MUTUO"
+    },
+    {
+      id: "hijos",
+      label: "Hijos",
+      value: 94.8,
+      icon: Baby,
+      color: "text-vial-blue",
+      bg: "bg-vial-teal",
+      desc: "El máximo nivel de responsabilidad. La influencia más pura, que transforma el riesgo en cautela.",
+      desc1: "EL VÍNCULO MÁS FUERTE"
+    },
+    {
+      id: "policia",
+      label: "Policía",
+      value: 58.2,
+      icon: ShieldCheck,
+      color: "text-vial-blue",
+      bg: "bg-vial-blue",
+      desc: "La amenaza externa. La voz de la ley y la coerción, cuya influencia es intermitente y evitable.",
+      desc1: "CONTROL INSTITUCIONAL"
+    },
+    {
+      id: "amigos",
+      label: "Amigos",
+      value: 54.9,
+      icon: Users,
+      color: "text-vial-blue",
+      bg: "bg-vial-blue",
+      desc: "Los amigos y el entorno social inmediato a menudo actúan como validadores de conductas de riesgo en lugar de frenos.",
+      desc1: "REFUERZO SOCIAL"
+    },
+    {
+      id: "redes",
+      label: "Redes",
+      value: 36.3,
+      icon: Share2,
+      color: "text-vial-red",
+      bg: "bg-vial-red",
+      desc: "El ruido intermitente. La voz de la tendencia y el castigo público, pero con el volumen más bajo de todos.",
+      desc1: "RUIDO DIGITAL"
+    },
+  ];
+
+
+
+  return (
+    <section className="min-h-screen py-16 px-6 flex flex-col items-center justify-center">
+      <div className="max-w-6xl w-full space-y-8">
+        {/* Header Narrativo */}
+        <div className="text-center space-y-2">
+
+          <h2 className="text-vial_red font-geist-bold uppercase tracking-[0.3em] text-sm animate-pulse">
+            Detrás de cada estadística hay alguien que te espera.
+          </h2>
+          <h1 className="text-4xl md:text-4xl font-geist-black tracking-tighter leading-none">
+            <strong> ¿A quién escuchas hoy antes de arrancar?</strong>
+          </h1>
+        </div>
+
+        {/* Sistema de Tabs Interactivos */}
+        <Tabs defaultValue="hijos" className="w-full">
+          <TabsList className="flex h-2 w-full backdrop-blur-sm border p-2 rounded-[2rem] shadow-xl mb-1">
+            {actores.map((actor) => (
+              <TabsTrigger
+                key={actor.id}
+                value={actor.id}
+                className="flex-1 rounded-[1.5rem] py-4 flex flex-row items-center justify-center gap-3 transition-all data-[state=active]:bg-white data-[state=active]:shadow-xl data-[state=active]:scale-105"
+              >
+                {/* Ajusté el tamaño del icono a w-5 h-5 para que sea legible junto al texto */}
+                <actor.icon className="w-5 h-5" />
+                <span className="text-[11px] font-geist-black uppercase tracking-widest leading-none whitespace-nowrap">
+                  {actor.label}
+                </span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {actores.map((actor) => (
+            <TabsContent
+              key={actor.id}
+              value={actor.id}
+              className="animate-in fade-in zoom-in duration-500 outline-none"
+            >
+              <Card className="border-none shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] bg-white rounded-[3rem] overflow-hidden">
+                <CardContent className="p-6 md:p-8 space-y-4 relative">
+                  <div className="flex justify-between items-center relative z-10">
+                    <div
+                      className={`${actor.bg} text-white px-6 py-1 rounded-full text-[12px] font-geist-black tracking-[0.3em] shadow-lg`}
+                    >
+                      Influeye en el {actor.value}% de los encuestados
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-geist-black text-vial_blue uppercase tracking-tighter leading-none">
-                        La Ruta <br /> <span className="text-vial_red text-6xl md:text-7xl">del Corazón</span>
-                    </h1>
-                    <p className="text-slate-500 font-geist-medium text-lg max-w-md mx-auto leading-relaxed">
-                        Donde las estadísticas dejan de ser números y se convierten en nombres.
+                  </div>
+                  <actor.icon
+                    className={`absolute top-1/2 left-10 -translate-y-1/2 w-60 h-60 opacity-10 ${actor.color} pointer-events-none`}
+                  />
+
+                  <div className="space-y-2 relative z-10">
+                    <h3
+                      className={`text-5xl md:text-7xl font-geist-black italic tracking-tighter leading-none ${actor.color}`}
+                    >
+                      La voz de {actor.label}
+                    </h3>
+                    <p className="text-2xl md:text-2xl text-justify text-slate-700 font-geist-medium leading-[1.1] max-w-3xl">
+                      {actor.desc}
                     </p>
-                </div>
+                  </div>
 
-                {/* Agentes Secretos (Cards) */}
-                <div className="space-y-6">
-                    {agentesSecretos.map((item, index) => (
-                        <div 
-                            key={item.label} 
-                            className="group space-y-4 bg-white p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(219,26,26,0.05)] border border-vial_red/5 transition-all hover:shadow-[0_20px_60px_rgba(219,26,26,0.12)] hover:-translate-y-1 duration-500 animate-in fade-in slide-in-from-bottom-10"
-                            style={{ animationDelay: `${(index + 1) * 300}ms`, animationFillMode: 'both' }}
-                        >
-                            <div className="flex justify-between items-end">
-                                <div className="space-y-1">
-                                    <span className="text-[10px] font-mono text-vial_red font-black tracking-[0.3em] opacity-70">
-                                        {item.cat}
-                                    </span>
-                                    <h3 className="text-3xl font-geist-black text-vial_blue italic tracking-tighter">
-                                        {item.label}
-                                    </h3>
-                                </div>
-                                <div className="text-right">
-                                    <span className="text-5xl font-geist-black text-vial_red tracking-tighter">
-                                        {item.value}%
-                                    </span>
-                                    <p className="text-[10px] font-geist-bold text-slate-400 uppercase tracking-widest">de influencia</p>
-                                </div>
-                            </div>
+                  <div className="pt-4 flex items-center justify-between border-t border-slate-50 relative z-10">
+                    <span className="text-[10px] font-mono text-slate-300 tracking-[0.4em] uppercase">
+                      {actor.desc1}
+                    </span>
+                    <span
+                      className={`absolute bottom-4 -right-4 text-[250px] font-geist-black opacity-15 pointer-events-none leading-none ${actor.color}`}
+                    >
+                      {Math.floor(actor.value)}%
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          ))}
+        </Tabs>
 
-                            {/* Progress Bar Custom */}
-                            <div className="relative h-14 bg-vial_red/5 rounded-2xl overflow-hidden border border-vial_red/10 shadow-inner">
-                                <div
-                                    className="h-full bg-vial_red flex items-center justify-end px-6 transition-all duration-[2500ms] ease-out delay-500"
-                                    style={{ width: `${item.value}%` }}
-                                >
-                                    <Heart className="w-7 h-7 text-white fill-current animate-pulse shadow-lg" />
-                                </div>
-                            </div>
-                            
-                            <p className="text-sm text-slate-400 font-geist-medium italic leading-relaxed pl-2">
-                                "{item.desc}"
-                            </p>
-                        </div>
-                    ))}
+        {/* La Promesa Sagrada */}
+        <div className="flex flex-col items-center justify-center w-full ">
+          <p className="mt-6 text-slate-400 font-geist-medium italic">
+            Porque al final, lo más importante es volver a casa.
+          </p>
+          <div onClickCapture={() => setPromised(!promised)}>
+            <ConfettiButton
+              options={{
+                get particleCount() { return promised ? 0 : 150 }, // No dispara si ya se hizo
+                spread: 80,
+                colors: ["#14b8a6", "#DB1A1A", "#2C687B"],
+                origin: { y: 0.6 }
+              }}
+              // Clases de estilo (combinamos tus clases con las de shadcn/magicui)
+              className={`
+              relative flex items-center justify-center gap-4 px-12 py-7 rounded-full 
+              font-geist-black uppercase tracking-[0.2em] transition-all duration-500 shadow-2xl 
+              min-w-105 text-vial-bg border-none
+              ${promised
+                  ? "bg-vial-teal hover:bg-vial-blue hover:scale-105 active:scale-95 shadow-vial-bg/30"
+                  : "bg-vial-teal shadow-vial-teal/30 scale-95"
+                }
+            `}
+            >
+              {promised ? (
+                <div className="flex items-center gap-3">
+                  <Home className="w-6 h-6" />
+                  <span>Hacer mi promesa de volver</span>
                 </div>
-
-                {/* El CTA Final: La Promesa */}
-                <div className="pt-12 text-center space-y-8 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-1000">
-                    <div className="space-y-2">
-                        <p className="text-vial_blue font-geist-bold text-2xl tracking-tight">
-                            ¿Cuál es tu promesa hoy?
-                        </p>
-                        <p className="text-slate-400 text-sm font-geist-medium">
-                            Tú eres el agente de cambio más importante en la vía.
-                        </p>
-                    </div>
-                    
-                    <button className="group relative overflow-hidden bg-vial_red text-white px-12 py-5 rounded-full font-geist-black uppercase tracking-widest transition-all hover:bg-vial_blue hover:scale-105 active:scale-95 shadow-xl shadow-vial_red/20">
-                        <span className="relative z-10">Hacer la promesa de volver</span>
-                        <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    </button>
+              ) : (
+                <div className="flex items-center gap-3 animate-in zoom-in">
+                  <CheckCircle2 className="w-6 h-6" />
+                  <span>Promesa Realizada 🎉</span>
                 </div>
-            </div>
-        </section>
-    );
+              )}
+            </ConfettiButton>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Acto4_Control;

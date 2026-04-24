@@ -51,7 +51,16 @@
     --color-vial-red: #DB1A1A;    
     --color-vial-teal: #8CC7C4;   
     --color-vial-blue: #2C687B;   
-    --color-vial-bg: #FFF6F6;
+    --color-vial-bg: #FFF6F6;   
+    --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+        }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+        }
+    }
 }
 
 :root {
@@ -140,9 +149,8 @@
   .scroll-section {
     @apply min-h-screen flex flex-col justify-center px-6 py-20 border-b border-border/50;
   }
-  
+
   .sticky-visual {
     @apply sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-muted/30;
   }
 }
-
