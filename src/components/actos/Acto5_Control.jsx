@@ -92,6 +92,7 @@ const Acto5_Control = () => {
               {actores.map((actor) => (
                 <button
                   key={actor.id}
+                  aria-label={`Ver información sobre ${actor.label}`}
                   onClick={() => setselectedActor(actor)}
                   className={`p-4 rounded-full transition-all duration-500 shadow-sm ${selectedActor?.id === actor.id
                       ? `${actor.bg} scale-125 text-white shadow-xl`
