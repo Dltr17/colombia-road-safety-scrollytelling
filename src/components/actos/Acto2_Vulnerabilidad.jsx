@@ -54,8 +54,8 @@ function Acto2_Vulnerabilidad() {
 
   return (
     <section className="min-h-screen flex flex-col justify-between py-16 px-12">
-
       <div className="w-full max-w-300 mx-auto text-center space-y-6">
+<span className="text-vial_red font-geist-bold tracking-widest uppercase text-sm">Acto II</span>
 
         <h2 className="text-vial-blue text-6xl md:text-6xl font-black uppercase tracking-tighter leading-none">
           El Rostro de la <span className="text-vial-teal">Vulnerabilidad</span>

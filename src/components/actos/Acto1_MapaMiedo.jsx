@@ -33,7 +33,6 @@ const Acto1_MapaMiedo = () => {
       {/* COLUMNA IZQUIERDA: Texto Narrativo (Scrollable) */}
       <div className="w-full md:w-2/5 z-10 bg-white/90 backdrop-blur-sm">
 
-
         {/* Bloque 1: Pacífico y Caribe (Periferia) */}
         <SectionNarrativa idGrupo="Region_Pacifica" setGrupo={setGrupoActivo}>
           <h2 className="text-3xl font-bold text-vial-blue mb-6 text-center" style={{ color: "#991B1B" }}>La Crisis en la Periferia</h2>
@@ -110,6 +109,7 @@ const Acto1_MapaMiedo = () => {
       {/* COLUMNA DERECHA: Mapa Fijo (Sticky) */}
       <div className="sticky top-0 h-screen w-full md:w-3/5 flex items-center justify-center bg-slate-50 overflow-hidden">
         <div className="w-full h-full flex flex-col items-center justify-center p-12">
+<span className="text-vial_red font-geist-bold tracking-widest uppercase text-sm">Acto I</span>
 
           <div className="mb-8 text-center">
             <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">

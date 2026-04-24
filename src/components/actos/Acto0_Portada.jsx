@@ -1,5 +1,6 @@
 import React from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { ChevronDown } from 'lucide-react';
 
 
 function Acto0_Portada() {
@@ -37,10 +38,10 @@ function Acto0_Portada() {
         {/* Descripción integrada en el flujo para que baje con el título */}
 
       {/* Indicador de interacción */}
-      <div className="absolute bottom-10 z-10 animate-bounce text-slate-400">
-        <p className="text-[10px] uppercase tracking-[0.3em] mb-1 font-bold">Desliza para explorar</p>
-        <span className="text-2xl">↓</span>
-      </div>
+      <div className="pt-10 flex flex-col items-center gap-2 text-slate-400">
+            <span className="text-xs font-mono uppercase tracking-widest">Desliza para explorar</span>
+            <ChevronDown className="animate-bounce w-6 h-6" />
+          </div>
 
 
     </section>
